@@ -14,8 +14,8 @@ function Header (props) {
     }
 
     return(
-        <header>
-            <p>Hacker News</p>
+        <header className="App-header">
+            <p className="headTitle">Hacker News</p>
             <input 
                 onChange={handleChange} 
                 onKeyPress={handleEnterSubmit} 
