@@ -9,7 +9,6 @@ import Loader from './Loader'
 function App() {
   const[loading, setLoading] = useState( true )
 
-  
   const [searchResults, setSearchResults] = useState(
     ""
     );
@@ -19,9 +18,6 @@ function App() {
       getData('news')
     }, []
     )
-
-  
-
 
   const url = 'https://hn.algolia.com/api/v1/search?query='
 
