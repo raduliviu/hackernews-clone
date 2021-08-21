@@ -1,13 +1,18 @@
 import './App.css';
-import { hackernewsData } from './hackernews.js'
+// import { hackernewsData } from './hackernews.js'
 import React, { useEffect, useState } from 'react';
 import Header from './Header'
 import Main from './Main'
 import Loader from './Loader'
+import Error from './Error'
 
 
 function App() {
   const[loading, setLoading] = useState( true )
+
+  // const [errorMessage, setErrorMessage] = useState('')
+
+  const [errorState, setErrorState] = useState(false)
 
   const [searchResults, setSearchResults] = useState(
     ""
@@ -26,13 +31,24 @@ function App() {
     try {
       const response = await fetch(url + encodeURI(searchQuery), { cache: 'no-cache' })
       if (response.ok) {
+        setErrorState(false)
         const jsonResponse = await response.json()
         setSearchResults(jsonResponse)
       }
     } catch (error) {
       console.log(error)
+      setErrorState(true)
     }
     setLoading(false);
+  }
+
+  let mainSection;
+  if (loading) {
+    mainSection = <Loader />
+  } else if (errorState) {
+    mainSection = <Error />
+  } else {
+    mainSection = <Main searchResults={searchResults}/>
   }
 
   if(loading){
@@ -43,9 +59,7 @@ function App() {
       <Header
         getData={getData}
       />
-      <Main
-        searchResults={searchResults}
-      />
+      {mainSection}
     </div>
   );
 }
