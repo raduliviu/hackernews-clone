@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/hackernews-clone/static/css/main.a617e044.chunk.css",
-    "main.js": "/hackernews-clone/static/js/main.1b3fd50a.chunk.js",
-    "main.js.map": "/hackernews-clone/static/js/main.1b3fd50a.chunk.js.map",
-    "runtime-main.js": "/hackernews-clone/static/js/runtime-main.6e4e4a0e.js",
-    "runtime-main.js.map": "/hackernews-clone/static/js/runtime-main.6e4e4a0e.js.map",
-    "static/js/2.95efeefb.chunk.js": "/hackernews-clone/static/js/2.95efeefb.chunk.js",
-    "static/js/2.95efeefb.chunk.js.map": "/hackernews-clone/static/js/2.95efeefb.chunk.js.map",
-    "static/js/3.44dc5281.chunk.js": "/hackernews-clone/static/js/3.44dc5281.chunk.js",
-    "static/js/3.44dc5281.chunk.js.map": "/hackernews-clone/static/js/3.44dc5281.chunk.js.map",
+    "main.css": "/hackernews-clone/static/css/main.81273249.chunk.css",
+    "main.js": "/hackernews-clone/static/js/main.7f2859af.chunk.js",
+    "main.js.map": "/hackernews-clone/static/js/main.7f2859af.chunk.js.map",
+    "runtime-main.js": "/hackernews-clone/static/js/runtime-main.8b8a4775.js",
+    "runtime-main.js.map": "/hackernews-clone/static/js/runtime-main.8b8a4775.js.map",
+    "static/js/2.e2625544.chunk.js": "/hackernews-clone/static/js/2.e2625544.chunk.js",
+    "static/js/2.e2625544.chunk.js.map": "/hackernews-clone/static/js/2.e2625544.chunk.js.map",
+    "static/js/3.513661ee.chunk.js": "/hackernews-clone/static/js/3.513661ee.chunk.js",
+    "static/js/3.513661ee.chunk.js.map": "/hackernews-clone/static/js/3.513661ee.chunk.js.map",
     "index.html": "/hackernews-clone/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/hackernews-clone/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.95efeefb.chunk.js.LICENSE.txt": "/hackernews-clone/static/js/2.95efeefb.chunk.js.LICENSE.txt"
+    "static/css/main.81273249.chunk.css.map": "/hackernews-clone/static/css/main.81273249.chunk.css.map",
+    "static/js/2.e2625544.chunk.js.LICENSE.txt": "/hackernews-clone/static/js/2.e2625544.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6e4e4a0e.js",
-    "static/js/2.95efeefb.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.1b3fd50a.chunk.js"
+    "static/js/runtime-main.8b8a4775.js",
+    "static/js/2.e2625544.chunk.js",
+    "static/css/main.81273249.chunk.css",
+    "static/js/main.7f2859af.chunk.js"
   ]
 }
