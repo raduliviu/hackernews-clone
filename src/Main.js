@@ -9,6 +9,7 @@ function Main (props) {
                 {props.searchResults.hits.map(result => {
                    return <Result 
                        result={result}
+                       key={result.objectID}
                    />
                 })}
             </ol>
