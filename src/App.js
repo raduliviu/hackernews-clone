@@ -9,6 +9,8 @@ import Loader from './Loader'
 function App() {
   const[loading, setLoading] = useState( true )
 
+  const[currentPage, setCurrentPage] = useState( 1 )
+  
   const [searchResults, setSearchResults] = useState(
     ""
     );
@@ -24,16 +26,24 @@ function App() {
   const getData = async (searchQuery) => {
     setLoading(true)
     try {
-      const response = await fetch(url + encodeURI(searchQuery), { cache: 'no-cache' })
+      const response = await fetch(url + encodeURI(searchQuery) + '&page=' + currentPage, { cache: 'no-cache' })
       if (response.ok) {
         const jsonResponse = await response.json()
-        setSearchResults(jsonResponse)
+        return jsonResponse;
       }
     } catch (error) {
       console.log(error)
     }
     setLoading(false);
   }
+
+const moreData = async () => {
+  setCurrentPage(currentPage + 1);
+  setSearchResults(...searchResults, getData)
+  
+}
+
+setSearchResults(getData())
 
   if(loading){
     return <Loader /> 
