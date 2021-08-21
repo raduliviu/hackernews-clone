@@ -87,3 +87,14 @@
         transform: rotate(360deg);
     }
 }
+
+#error {
+  font-size: 3rem;
+  color: darkred;
+  font-weight: bold;
+  padding: 3rem;
+}
+#error img {
+  max-width: 100%;
+  height: auto;
+}
