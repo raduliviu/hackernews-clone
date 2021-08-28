@@ -5,7 +5,7 @@ function Main(props) {
   console.log(props);
 
   if (props.searchResults.hits.length === 0) {
-  return   <div>No results found. Please try again.</div>
+  return   <div className="noResultsMessage"><strong>No results found. Please try again.</strong></div>
 }
 
 

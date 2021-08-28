@@ -79,6 +79,17 @@
   font-size: 20px;
   cursor: pointer;
 }
+.noResultsMessage{
+  font-size: larger;
+  padding-top: 30px;
+  padding-bottom: 500px;
+  background-color: aliceblue;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
