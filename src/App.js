@@ -1,16 +1,19 @@
 import './App.css';
-import { hackernewsData } from './hackernews.js'
+// import { hackernewsData } from './hackernews.js'
 import React, { useEffect, useState, useRef } from 'react';
 import Header from './Header'
 import Main from './Main'
 import Loader from './Loader'
+import Error from './Error'
 
 
 function App() {
-  const[loading, setLoading] = useState( true )
+  const [loading, setLoading] = useState(true)
 
-  const[currentPage, setCurrentPage] = useState( 1 )
-  
+  const[currentPage, setCurrentPage] = useState( 1 );
+
+  const [errorState, setErrorState] = useState(false);
+
   const [searchResults, setSearchResults] = useState(
     ""
     );
@@ -23,7 +26,7 @@ function App() {
       setSearchResults(currentSearch)
       setLoading(false);
     }, []
-    )
+  )
 
   const url = 'https://hn.algolia.com/api/v1/search?query='
 
@@ -34,10 +37,12 @@ function App() {
     try {
       const response = await fetch(url + encodeURI(searchQuery) + '&page=' + currentPage, { cache: 'no-cache' })
       if (response.ok) {
-        jsonResponse = await response.json()
+          setErrorState(false)
+          jsonResponse = await response.json()
       }
     } catch (error) {
       console.log(error);
+      setErrorState(true)
       jsonResponse.error = error.message
     }
     currentSearch = jsonResponse
@@ -73,21 +78,23 @@ function App() {
     setLoading(false);
   }
 
+  let mainSection;
+  if (loading) {
+    mainSection = <Loader />
+  } else if (errorState) {
+    mainSection = <Error />
+  } else {
+    mainSection = <Main searchResults={searchResults} />
+  }
 
- 
   return (
-    
     <div className="App">
       <Header
         getData={getData}
       />
 
-      {loading ? <Loader />  : <Main
-        searchResults={searchResults}
-        moreData={moreData}
-      />}
+      {mainSection}
 
-      
     </div>
   );
 }
