@@ -29,7 +29,7 @@ function Header (props) {
                 type="text"
                 value={searchTerm}
                 />
-            {searchTerm ? <img src={closeImage} id="clearSearch" onClick={() => clearSearch()}></img> : ''}
+            {searchTerm ? <img alt="clear" src={closeImage} id="clearSearch" onClick={() => clearSearch()}></img> : ''}
             <button onClick={() => props.getData(searchTerm)}>Search</button>
         </header>
     )
