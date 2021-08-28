@@ -9,9 +9,9 @@ function Main(props) {
         {props.searchResults.hits.map((result) => {
           return <Result result={result} key={result.objectID} />;
         })}
-        <a className="btnMore" href="#">
+        <button className="btnMore" onClick={props.moreData}>
           More
-        </a>
+        </button>
       </ol>
     </main>
   );
