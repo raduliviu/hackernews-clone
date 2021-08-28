@@ -53,7 +53,6 @@ function App() {
   }
 
   const moreData = async (searchQuery) => {
-    setLoading(true)
     setCurrentPage(currentPage + 1)
     const newData = await getData(searchQuery);
     setSearchResults((prevData) => {
@@ -61,7 +60,6 @@ function App() {
       const combinedData = { ...newData, hits: combinedHits };
       return combinedData
     })
-    setLoading(false);
   }
 
   let mainSection;
@@ -72,6 +70,7 @@ function App() {
   } else {
     mainSection = <Main searchResults={searchResults} moreData={moreData} />
   }
+
 
   return (
     <div className="App">
