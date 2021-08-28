@@ -109,3 +109,35 @@
   max-width: 100%;
   height: auto;
 }
+
+#searchField {
+  padding: 2px;
+}
+
+#clearSearch {
+  margin-left: -22px;
+  padding: 3px;
+  z-index: 99;
+  max-width: 100%;
+  height: auto;
+}
+
+#clearSearch:hover {
+  cursor: pointer;
+}
+
+#sortBar {
+  min-height: 2rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+  margin-left: 100px;
+  margin-right: 100px;
+  line-height: 2rem;
+}
+
+#sort-select {
+  padding: 2px;
+}

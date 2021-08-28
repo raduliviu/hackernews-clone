@@ -4,7 +4,7 @@ import Header from './Header'
 import Main from './Main'
 import Loader from './Loader'
 import Error from './Error'
-
+import Sort from './Sort'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -17,14 +17,20 @@ function App() {
     ""
   );
 
+  const [sorting, setSorting] = useState('search')
+
   useEffect(
-    () => initialSearch('news'), []
+    () => initialSearch(searchResults.query || ''), [sorting]
   )
 
-  const url = 'https://hn.algolia.com/api/v1/search?query='
+  const sortingToggle = (param) => {
+    setSorting(param)
+    console.log(param)
+  }
 
   const getData = async (searchQuery) => {
     let jsonResponse = { error: "unknown" };
+    let url = `https://hn.algolia.com/api/v1/${sorting}?query=`
     try {
       const response = await fetch(url + encodeURI(searchQuery) + '&page=' + currentPage, { cache: 'no-cache' })
       if (response.ok) {
@@ -71,6 +77,7 @@ function App() {
       <Header
         getData={initialSearch}
       />
+      <Sort sortingToggle={sortingToggle} />
 
       {mainSection}
 

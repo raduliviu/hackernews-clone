@@ -6,7 +6,12 @@ import MoreButton from './MoreButton';
 function Main(props) {
   console.log(props);
 
+
   const [loadingMore, setLoadingMore] = useState(false)
+
+  if(!props.searchResults) {
+    return <div>Loading...</div>
+  }
 
   if (props.searchResults.hits.length === 0) {
   return   <div className="noResultsMessage"><strong>No results found. Please try again.</strong></div>
@@ -29,7 +34,7 @@ function Main(props) {
     <main>
       <ol className="content">
         {props.searchResults.hits.map((result) => {
-          return <Result result={result} key={result.objectID} />;
+          return <Result result={result} key={result.objectID} query={props.searchResults.query} />;
         })}
         {moreButton}
       </ol>
