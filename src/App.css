@@ -1,5 +1,5 @@
 .App {
-    text-align: center;
+    text-align: left;
 }
 
 .loader {
@@ -14,11 +14,7 @@
     pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
+
 
 .App-header {
   background-color: #282c34;
@@ -34,6 +30,21 @@
 
 }
 
+/* On screens that are 600px wide or less*/
+@media only screen and (max-width: 600px) {
+  .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+
+   .App-header {
+    flex-direction: column;
+  }
+
+  .inputField{
+    margin-bottom: 30px;
+  }
+  
+}
 
 .App-link {
     color: #61dafb;

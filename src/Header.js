@@ -21,8 +21,11 @@ function Header (props) {
 
     return(
         <header className="App-header">
+            <div>
             <p className="headTitle">Hacker News</p>
-            <input 
+            </div>
+            <div>
+            <input className="inputField" 
                 onChange={handleChange} 
                 onKeyPress={handleEnterSubmit} 
                 id="searchField" 
@@ -31,6 +34,7 @@ function Header (props) {
                 />
             {searchTerm ? <img alt="clear" src={closeImage} id="clearSearch" onClick={() => clearSearch()}></img> : ''}
             <button onClick={() => props.getData(searchTerm)}>Search</button>
+            </div>
         </header>
     )
 }
