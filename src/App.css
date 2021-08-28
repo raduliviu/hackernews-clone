@@ -98,3 +98,19 @@
   max-width: 100%;
   height: auto;
 }
+
+#searchField {
+  padding: 2px;
+}
+
+#clearSearch {
+  margin-left: -22px;
+  padding: 3px;
+  z-index: 99;
+  max-width: 100%;
+  height: auto;
+}
+
+#clearSearch:hover {
+  cursor: pointer;
+}

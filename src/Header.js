@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import closeImage from './assets/close_s.png';
 
 function Header (props) {
     const [searchTerm, setSearchTerm] = useState('')
@@ -13,6 +14,10 @@ function Header (props) {
         }
     }
 
+    const clearSearch = () => {
+        setSearchTerm('')
+    }
+
     return(
         <header className="App-header">
             <p className="headTitle">Hacker News</p>
@@ -23,6 +28,7 @@ function Header (props) {
                 type="text"
                 value={searchTerm}
                 />
+            {searchTerm ? <img src={closeImage} id="clearSearch" onClick={() => clearSearch()}></img> : ''}
             <button onClick={() => props.getData(searchTerm)}>Search</button>
         </header>
     )
