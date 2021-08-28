@@ -1,18 +1,19 @@
 import React from 'react';
 
 function Result ({result, query}) {
-    console.log(result.title || result.story_title)
     let title = result.title || result.story_title
     const toCappitalCase = function(txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       }
-    title = title.replaceAll(query.toLowerCase(), "<mark>"+query.toLowerCase()+"</mark>")
-    title = title.replaceAll(query.toUpperCase(), "<mark>"+query.toUpperCase()+"</mark>")
-    title = title.replaceAll(toCappitalCase(query), "<mark>"+toCappitalCase(query)+"</mark>")
 
-
+    if (title && query) {
+        title = title.replaceAll(query.toLowerCase(), "<mark>"+query.toLowerCase()+"</mark>")
+        title = title.replaceAll(query.toUpperCase(), "<mark>"+query.toUpperCase()+"</mark>")
+        title = title.replaceAll(toCappitalCase(query), "<mark>"+toCappitalCase(query)+"</mark>")
+    }
+    
     const modifiedTitle = {
-        __html:title.replaceAll(query, "<mark>"+query+"</mark>")
+        __html:title
     }
         
     return(
