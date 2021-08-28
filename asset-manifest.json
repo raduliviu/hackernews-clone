@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/hackernews-clone/static/css/main.0d26bb33.chunk.css",
-    "main.js": "/hackernews-clone/static/js/main.d34a3175.chunk.js",
-    "main.js.map": "/hackernews-clone/static/js/main.d34a3175.chunk.js.map",
-    "runtime-main.js": "/hackernews-clone/static/js/runtime-main.8b8a4775.js",
-    "runtime-main.js.map": "/hackernews-clone/static/js/runtime-main.8b8a4775.js.map",
-    "static/js/2.3b46419b.chunk.js": "/hackernews-clone/static/js/2.3b46419b.chunk.js",
-    "static/js/2.3b46419b.chunk.js.map": "/hackernews-clone/static/js/2.3b46419b.chunk.js.map",
-    "static/js/3.513661ee.chunk.js": "/hackernews-clone/static/js/3.513661ee.chunk.js",
-    "static/js/3.513661ee.chunk.js.map": "/hackernews-clone/static/js/3.513661ee.chunk.js.map",
+    "main.css": "/hackernews-clone/static/css/main.398d096c.chunk.css",
+    "main.js": "/hackernews-clone/static/js/main.0644571e.chunk.js",
+    "main.js.map": "/hackernews-clone/static/js/main.0644571e.chunk.js.map",
+    "runtime-main.js": "/hackernews-clone/static/js/runtime-main.adab33d4.js",
+    "runtime-main.js.map": "/hackernews-clone/static/js/runtime-main.adab33d4.js.map",
+    "static/js/2.f19c3073.chunk.js": "/hackernews-clone/static/js/2.f19c3073.chunk.js",
+    "static/js/2.f19c3073.chunk.js.map": "/hackernews-clone/static/js/2.f19c3073.chunk.js.map",
+    "static/js/3.fb928c86.chunk.js": "/hackernews-clone/static/js/3.fb928c86.chunk.js",
+    "static/js/3.fb928c86.chunk.js.map": "/hackernews-clone/static/js/3.fb928c86.chunk.js.map",
     "index.html": "/hackernews-clone/index.html",
-    "static/css/main.0d26bb33.chunk.css.map": "/hackernews-clone/static/css/main.0d26bb33.chunk.css.map",
-    "static/js/2.3b46419b.chunk.js.LICENSE.txt": "/hackernews-clone/static/js/2.3b46419b.chunk.js.LICENSE.txt",
+    "static/css/main.398d096c.chunk.css.map": "/hackernews-clone/static/css/main.398d096c.chunk.css.map",
+    "static/js/2.f19c3073.chunk.js.LICENSE.txt": "/hackernews-clone/static/js/2.f19c3073.chunk.js.LICENSE.txt",
     "static/media/errorIcon.44a635b3.png": "/hackernews-clone/static/media/errorIcon.44a635b3.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.8b8a4775.js",
-    "static/js/2.3b46419b.chunk.js",
-    "static/css/main.0d26bb33.chunk.css",
-    "static/js/main.d34a3175.chunk.js"
+    "static/js/runtime-main.adab33d4.js",
+    "static/js/2.f19c3073.chunk.js",
+    "static/css/main.398d096c.chunk.css",
+    "static/js/main.0644571e.chunk.js"
   ]
 }
