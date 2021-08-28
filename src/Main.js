@@ -19,7 +19,7 @@ function Main(props) {
 
   const loadMore = () => {
     setLoadingMore(true);
-    props.moreData();
+    props.moreData(props.searchResults.query);
     setTimeout(() => setLoadingMore(false), 500);
   }
 
