@@ -4,7 +4,7 @@ import Header from './Header'
 import Main from './Main'
 import Loader from './Loader'
 import Error from './Error'
-
+import Sort from './Sort'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -17,16 +17,26 @@ function App() {
     ""
   );
 
+  console.log(currentPage)
+
+  const [sorting, setSorting] = useState('search')
+
   useEffect(
-    () => initialSearch('news'), []
+    () => initialSearch(searchResults.query || ''), [sorting]
   )
 
-  const url = 'https://hn.algolia.com/api/v1/search?query='
+  const sortingToggle = (param) => {
+    setCurrentPage(1)
+    setSorting(param)
+    console.log(param)
+  }
 
-  const getData = async (searchQuery) => {
+  const getData = async (searchQuery, currentPage = 1) => {
     let jsonResponse = { error: "unknown" };
+    let url = `https://hn.algolia.com/api/v1/${sorting}?query=`
     try {
       const response = await fetch(url + encodeURI(searchQuery) + '&page=' + currentPage, { cache: 'no-cache' })
+      console.log(response)
       if (response.ok) {
         setErrorState(false)
         jsonResponse = await response.json()
@@ -47,15 +57,13 @@ function App() {
   }
 
   const moreData = async (searchQuery) => {
-    setLoading(true)
-    setCurrentPage(currentPage + 1)
-    const newData = await getData(searchQuery);
+    const newData = await getData(searchQuery, currentPage + 1);
+    setCurrentPage((prev)=>{return prev + 1})
     setSearchResults((prevData) => {
       const combinedHits = [...prevData.hits, ...newData.hits];
       const combinedData = { ...newData, hits: combinedHits };
       return combinedData
     })
-    setLoading(false);
   }
 
   let mainSection;
@@ -67,11 +75,13 @@ function App() {
     mainSection = <Main searchResults={searchResults} moreData={moreData} />
   }
 
+
   return (
     <div className="App">
       <Header
         getData={initialSearch}
       />
+      <Sort sortingToggle={sortingToggle} />
 
       {mainSection}
 
