@@ -14,7 +14,7 @@ function Main(props) {
     <main>
       <ol className="content">
         {props.searchResults.hits.map((result) => {
-          return <Result result={result} key={result.objectID} />;
+          return <Result result={result} key={result.objectID} query={props.searchResults.query} />;
         })}
         <button className="btnMore" onClick={props.moreData}>
           More
