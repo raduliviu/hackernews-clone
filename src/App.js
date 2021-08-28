@@ -8,21 +8,19 @@ import Error from './Error'
 
 
 function App() {
-  const[loading, setLoading] = useState( true )
+  const [loading, setLoading] = useState(true)
 
   // const [errorMessage, setErrorMessage] = useState('')
 
   const [errorState, setErrorState] = useState(false)
 
-  const [searchResults, setSearchResults] = useState(
-    ""
-    );
+  const [searchResults, setSearchResults] = useState("");
 
   useEffect(
     () => {
       getData('news')
     }, []
-    )
+  )
 
   const url = 'https://hn.algolia.com/api/v1/search?query='
 
@@ -48,13 +46,10 @@ function App() {
   } else if (errorState) {
     mainSection = <Error />
   } else {
-    mainSection = <Main searchResults={searchResults}/>
+    mainSection = <Main searchResults={searchResults} />
   }
 
-  if(loading){
-    return <Loader /> 
-  }else return (
-    
+  return (
     <div className="App">
       <Header
         getData={getData}
