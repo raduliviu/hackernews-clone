@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useState } from 'react';
 import Result from "./Result";
+import Loader from './Loader'
+import MoreButton from './MoreButton';
 
 function Main(props) {
   console.log(props);
+
+  const [loadingMore, setLoadingMore] = useState(false)
 
   if (props.searchResults.hits.length === 0) {
   return   <div className="noResultsMessage"><strong>No results found. Please try again.</strong></div>
 }
 
+  const loadMore = () => {
+    setLoadingMore(true);
+    props.moreData();
+    setTimeout(() => setLoadingMore(false), 500);
+  }
 
+  let moreButton
+  if (loadingMore) {
+    moreButton = <Loader />
+  } else {
+    moreButton = <MoreButton loadMore={loadMore}/>
+  }
 
   return (
     <main>
@@ -16,9 +31,7 @@ function Main(props) {
         {props.searchResults.hits.map((result) => {
           return <Result result={result} key={result.objectID} />;
         })}
-        <button className="btnMore" onClick={props.moreData}>
-          More
-        </button>
+        {moreButton}
       </ol>
     </main>
   );
