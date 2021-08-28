@@ -11,6 +11,7 @@ function Header (props) {
         if(event.key === "Enter"){
             props.getData(searchTerm)
         }
+
     }
 
     return(
