@@ -15,9 +15,9 @@ function Header (props) {
 
     }
 
-    const clearSearch = () => {
-        setSearchTerm('')
-    }
+    // const clearSearch = () => {
+    //     setSearchTerm('')
+    // }
 
     return(
         <header className="App-header">
@@ -29,10 +29,10 @@ function Header (props) {
                 onChange={handleChange} 
                 onKeyPress={handleEnterSubmit} 
                 id="searchField" 
-                type="text"
+                type="search"
                 value={searchTerm}
                 />
-            {searchTerm ? <img alt="clear" src={closeImage} id="clearSearch" onClick={() => clearSearch()}></img> : ''}
+            {/* {searchTerm ? <img alt="clear" src={closeImage} id="clearSearch" onClick={() => clearSearch()}></img> : ''} */}
             <button onClick={() => props.getData(searchTerm)}>Search</button>
             </div>
         </header>

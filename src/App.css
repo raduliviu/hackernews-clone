@@ -30,21 +30,7 @@
 
 }
 
-/* On screens that are 600px wide or less*/
-@media only screen and (max-width: 600px) {
-  .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
 
-   .App-header {
-    flex-direction: column;
-  }
-
-  .inputField{
-    margin-bottom: 30px;
-  }
-  
-}
 
 .App-link {
     color: #61dafb;
@@ -151,4 +137,26 @@
 
 #sort-select {
   padding: 2px;
+}
+
+/* On screens that are 600px wide or less*/
+@media only screen and (max-width: 600px) {
+  .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+
+   .App-header {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .inputField{
+    margin-bottom: 30px;
+  }
+  ol.content, #sortBar {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
 }
