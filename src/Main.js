@@ -26,7 +26,9 @@ function Main(props) {
   let moreButton
   if (loadingMore) {
     moreButton = <Loader />
-  } else {
+  } else if (props.searchResults.nbPages == props.searchResults.page) {
+    moreButton = ''
+  }  else {
     moreButton = <MoreButton loadMore={loadMore}/>
   }
 
